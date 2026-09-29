@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyper Duck | Mobile Apps & Game Studio</title>
+    <style>
+        /* Base Reset & Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: #FF3366;
+            --secondary: #7000FF;
+            --accent: #00E5FF;
+            --bg-dark: #0A0C10;
+            --card-bg: #161B22;
+            --text-light: #F0F6FC;
+            --text-gray: #8B949E;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 12, 16, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 1.5rem;
+            background: radial-gradient(circle at 50% 30%, rgba(112, 0, 255, 0.25) 0%, rgba(10, 12, 16, 1) 70%);
+        }
+
+        .hero-badge {
+            background: rgba(255, 51, 102, 0.15);
+            color: var(--primary);
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 51, 102, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            font-weight: 900;
+            margin-bottom: 1.2rem;
+            line-height: 1.15;
+            max-width: 900px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 650px;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .cta-btn {
+            padding: 0.9rem 2.2rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn.primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(255, 51, 102, 0.3);
+        }
+
+        .cta-btn.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 51, 102, 0.5);
+        }
+
+        .cta-btn.secondary {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-light);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .cta-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Section Layout */
+        section {
+            padding: 6rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.2rem;
+            display: inline-block;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+        }
+
+        /* Tech Stack */
+        .tech-box {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .tech-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .tech-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .submit-btn {
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { display: none; }
+            .contact-container { grid-template-columns: 1fr; }
+            .btn-group { flex-direction: column; width: 100%; }
+            .cta-btn { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">HYPER DUCK</div>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#tech">Tech Stack</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-badge">MOBILE APP & GAME STUDIO</div>
+        <h1>We Create Dynamic <span>Mobile Experiences</span></h1>
+        <p>상상을 현실로 만드는 모바일 게임과 스마트한 모바일 앱을 개발합니다. 기획부터 출도, 라이브 서비스까지 몰입감 있는 디지털 경험을 선사합니다.</p>
+        <div class="btn-group">
+            <a href="#contact" class="cta-btn primary">프로젝트 문의하기</a>
+            <a href="#services" class="cta-btn secondary">서비스 알아보기</a>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="section-header">
+            <h2 class="section-title">Core Services</h2>
+            <p class="section-subtitle">Hyper Duck이 제공하는 전문 모바일 개발 영역입니다.</p>
+        </div>
+        <div class="services-grid">
+            <div class="card">
+                <div class="card-icon">🎮</div>
+                <h3>Mobile Game Development</h3>
+                <p>캐주얼 게임부터 고성능 3D RPG까지, 유저의 몰입을 극대화하는 모바일 게임을 제작합니다.</p>
+                <div class="tag-list">
+                    <span class="tag">Unity</span>
+                    <span class="tag">Unreal Engine</span>
+                    <span class="tag">Godot Engine</span>
+                    <span class="tag">2D/3D Game</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">📱</div>
+                <h3>Native & Cross-Platform Apps</h3>
+                <p>iOS와 Android 환경 모두에서 매끄럽게 동작하는 고성능 모바일 애플리케이션을 구축합니다.</p>
+                <div class="tag-list">
+                    <span class="tag">Flutter</span>
+                    <span class="tag">React Native</span>
+                    <span class="tag">iOS/Android</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>Backend & Live Ops</h3>
+                <p>대규모 동시 접속자를 안정적으로 처리하는 서버 구축 및 데이터 기반 라이브 운영을 지원합니다.</p>
+                <div class="tag-list">
+                    <span class="tag">Node.js</span>
+                    <span class="tag">AWS</span>
+                    <span class="tag">LiveOps</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech">
+        <div class="tech-box">
+            <h2 class="section-title">Technologies We Master</h2>
+            <p class="section-subtitle">최신 파이프라인과 게임 엔진 기술을 활용하여 최적의 성능을 보장합니다.</p>
+            <div class="tech-tags">
+                <div class="tech-item">Unity 3D</div>
+                <div class="tech-item">Unreal Engine 5</div>
+                <div class="tech-item">Flutter</div>
+                <div class="tech-item">Swift (iOS)</div>
+                <div class="tech-item">Kotlin (Android)</div>
+                <div class="tech-item">AWS GameLift</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Let's Build Something Great</h3>
+                <p>혁신적인 모바일 앱이나 게임 아이디어가 있으신가요? Hyper Duck과 함께 프로젝트를 현실로 만들어 보세요.</p>
+                <p>📧 contact@hyperduck.io<br>📍Seoul, South Korea</p>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="이름 / 회사명" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="이메일 주소" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="4" placeholder="프로젝트 내용 및 문의 사항" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">문의 보내기</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Hyper Duck Inc. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
