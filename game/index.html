@@ -1,0 +1,79 @@
+<!--
+  Hyper Duck 사이트 첫 화면 — 스토어의 "개발자 웹사이트" 칸이 가리키는 주소다.
+  app-ads.txt 가 이 주소의 루트에 있어야 AdMob 이 광고 판매자를 확인한다.
+  앱을 새로 내면 아래 목록(영어 · 한국어)에 한 줄씩 더한다.
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hyper Duck</title>
+
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #faf8f5;
+    --fg: #2b2b28;
+    --muted: #6b6660;
+    --rule: #e0dbd3;
+    --accent: #c9861a;
+    --card: #f2eee7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1917;
+      --fg: #e8e4dd;
+      --muted: #9b958c;
+      --rule: #33312d;
+      --accent: #e0a03a;
+      --card: #232120;
+    }
+  }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    margin: 0 auto;
+    max-width: 44rem;
+    padding: 2.5rem 1.25rem 5rem;
+    word-break: keep-all;
+  }
+  h1 { font-size: 1.6rem; line-height: 1.35; margin: 0 0 .35rem; }
+  h2 {
+    font-size: 1.15rem;
+    margin: 2.5rem 0 .75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+  }
+  .sub { color: var(--muted); margin: 0 0 2rem; font-size: .95rem; }
+  .app {
+    background: var(--card);
+    border-radius: 10px;
+    padding: .9rem 1.1rem;
+    margin: .75rem 0;
+  }
+  .app strong { display: block; font-size: 1.05rem; }
+  .app span { color: var(--muted); font-size: .93rem; }
+  ul { padding-left: 1.2rem; }
+  li { margin: .35rem 0; }
+  a { color: var(--accent); }
+</style>
+
+<h1>Hyper Duck</h1>
+<p class="sub">Small puzzle games for phones. · 휴대폰용 작은 퍼즐 게임을 만듭니다.</p>
+
+<h2>Games · 게임</h2>
+<div class="app">
+  <strong>Shrink 2048</strong>
+  <span>Android · iOS</span>
+</div>
+<div class="app">
+  <strong>Twofall: Drop Merge Puzzle</strong>
+  <span>Android · iOS — <a href="support.html#twofall">Help</a> · <a href="support.html#twofall-ko">도움말</a></span>
+</div>
+
+<h2>Support · 지원</h2>
+<ul>
+  <li><a href="support.html">Support &amp; FAQ · 고객 지원</a></li>
+  <li><a href="privacy-policy.html">Privacy Policy · 개인정보처리방침</a></li>
+  <li><a href="mailto:hyperduck.com@gmail.com">hyperduck.com@gmail.com</a></li>
+</ul>

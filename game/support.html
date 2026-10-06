@@ -1,0 +1,283 @@
+<!--
+  Hyper Duck 공통 지원 페이지 (App Store Connect "지원 URL")
+  ===========================================================================
+  Hyper Duck 의 모든 앱이 이 한 페이지를 같이 씁니다. GitHub Pages 에서
+  privacy-policy.html 과 같은 폴더에 두세요(아래 링크가 상대 경로입니다).
+
+  App Store 심사는 이 페이지가 열리는지, 연락 방법이 보이는지를 봅니다.
+  이메일을 바꾸면 영어 · 한국어 두 곳을 모두 고치세요.
+
+  앱을 새로 낼 때
+    - "Our apps / 앱 목록" 두 곳에 한 줄씩 더합니다.
+    - 광고 동의 설정 위치(영어 · 한국어 두 곳)에 그 앱의 메뉴 경로를 더합니다.
+      privacy-policy.html 의 5.3 항과 같게 맞춥니다.
+    - 한 앱에만 해당하는 질문은 "앱별 도움말"에 그 앱 이름으로 절을 만들고
+      id 를 붙입니다(예: id="twofall"). 스토어 지원 URL 에 support.html#twofall 처럼
+      앱의 절을 바로 가리킬 수 있습니다.
+    - 원본은 prototype/hyperduck-site 하나뿐입니다(README.md). 여기서 고치고
+      GitHub Pages 저장소에 올립니다. 게임 프로젝트에 사본을 두지 마세요.
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hyper Duck Support</title>
+
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #faf8f5;
+    --fg: #2b2b28;
+    --muted: #6b6660;
+    --rule: #e0dbd3;
+    --accent: #c9861a;
+    --card: #f2eee7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1917;
+      --fg: #e8e4dd;
+      --muted: #9b958c;
+      --rule: #33312d;
+      --accent: #e0a03a;
+      --card: #232120;
+    }
+  }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    margin: 0 auto;
+    max-width: 44rem;
+    padding: 2.5rem 1.25rem 5rem;
+    word-break: keep-all;
+  }
+  h1 { font-size: 1.6rem; line-height: 1.35; margin: 0 0 .35rem; }
+  h2 {
+    font-size: 1.15rem;
+    margin: 2.5rem 0 .75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+  }
+  h3 { font-size: 1rem; margin: 1.5rem 0 .5rem; }
+  .sub { color: var(--muted); margin: 0 0 2rem; font-size: .95rem; }
+  .meta {
+    background: var(--card);
+    border-radius: 10px;
+    padding: .9rem 1.1rem;
+    font-size: .93rem;
+    color: var(--muted);
+  }
+  .meta div + div { margin-top: .2rem; }
+  .contact {
+    background: var(--card);
+    border-radius: 10px;
+    padding: 1.1rem 1.2rem;
+    margin: 1rem 0;
+  }
+  .contact a { font-size: 1.15rem; font-weight: 600; }
+  ul { padding-left: 1.2rem; }
+  li { margin: .35rem 0; }
+  a { color: var(--accent); }
+  code {
+    background: var(--card);
+    padding: .12em .4em;
+    border-radius: 4px;
+    font-size: .88em;
+  }
+  .lang-rule { margin: 4rem 0 0; border: 0; border-top: 3px double var(--rule); }
+</style>
+
+<h1>Hyper Duck Support</h1>
+<p class="sub">Support — The English version comes first, followed by the Korean version.</p>
+
+<div class="meta">
+  <div><strong>Developer</strong> Hyper Duck</div>
+  <div><strong>Contact</strong> hyperduck.com@gmail.com</div>
+</div>
+
+<h2>Contact us</h2>
+<div class="contact">
+  <a href="mailto:hyperduck.com@gmail.com">hyperduck.com@gmail.com</a>
+</div>
+<p>
+  Questions, bug reports and suggestions are all welcome. We read every message and
+  usually reply within a few days. To help us look into a problem quickly, please
+  include:
+</p>
+<ul>
+  <li>The app name</li>
+  <li>Your device model and OS version (for example, iPhone 15 · iOS 18, or Galaxy S24 · Android 15)</li>
+  <li>What happened and what you were doing just before — a screenshot helps a lot</li>
+</ul>
+
+<h2>Our apps</h2>
+<ul>
+  <li><strong>Shrink 2048</strong> — Android · iOS</li>
+  <li><strong>Twofall: Drop Merge Puzzle</strong> — Android · iOS (<a href="#twofall">app help</a>)</li>
+</ul>
+
+<h2>Frequently asked questions</h2>
+
+<h3>Where is my progress saved? Can I move it to a new phone?</h3>
+<p>
+  Our games have no accounts. Your progress and settings are saved only on your
+  device, never on our servers. Uninstalling the app deletes them, and there is no
+  in-app transfer to another phone. If you set up a new phone by restoring a device
+  backup (such as iCloud Backup or Google backup), your progress may come with it.
+</p>
+
+<h3>Do I have to watch ads?</h3>
+<p>
+  No. Rewarded ads play only when you choose to watch one for an in-game reward.
+  Other ads appear occasionally between games, never in the middle of one, and can
+  be closed. The games are fully playable without watching any ad.
+</p>
+
+<h3>How do I change my ad privacy choices?</h3>
+<ul>
+  <li>Turn off personalised ads — Android: <code>Settings → Privacy → Ads</code>;
+      iOS: <code>Settings → Privacy &amp; Security → Tracking</code>, then turn off
+      tracking for the app.</li>
+  <li>Users in the EEA, the UK and Switzerland can change their consent inside the app:
+    <ul>
+      <li>Shrink 2048: <code>Settings → Privacy → Ad preferences</code></li>
+      <li>Twofall: <code>Pause → Ad Privacy Settings</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h3>The game crashed or isn't working properly.</h3>
+<p>
+  Please update to the latest version from the store and restart your device. If the
+  problem continues, email us with the details listed above.
+</p>
+
+<h3>How do I request a refund for a purchase?</h3>
+<p>
+  For apps that offer in-app purchases, payments are handled by the store. Please
+  request a refund through
+  <a href="https://support.google.com/googleplay/answer/2479637">Google Play</a> or
+  <a href="https://reportaproblem.apple.com">Apple</a>. We are also happy to help by email.
+</p>
+
+<h3>What data do you collect?</h3>
+<p>
+  The apps themselves collect no personal information. Ads are provided by Google
+  AdMob. For details, see our <a href="privacy-policy.html">Privacy Policy</a>.
+</p>
+
+<h2>App help</h2>
+
+<h3 id="twofall">Twofall: Drop Merge Puzzle</h3>
+<ul>
+  <li><strong>How to play</strong> — Tap one of the six columns to drop the block. When two
+      equal numbers meet, they double. A tutorial runs the first time; replay it any time
+      from <strong>Help</strong> on the title screen.</li>
+  <li><strong>Points</strong> — Earned by clearing a challenge for the first time, completing
+      daily missions and reaching special numbers such as 1K for the first time. You can also
+      watch an ad in the shop for 50 points, up to 10 times a day. Points buy items in the
+      shop; nothing is sold for real money.</li>
+  <li><strong>Daily missions</strong> — Three new missions arrive at midnight, by your
+      device's clock. They fill up while you play the endless board.</li>
+  <li><strong>Offline play</strong> — The whole game works without an internet connection,
+      airplane mode included. Ads appear only when you are online.</li>
+  <li><strong>Language</strong> — Tap <strong>Language</strong> on the title screen to switch
+      between English and Korean.</li>
+</ul>
+
+<hr class="lang-rule">
+
+<h1>Hyper Duck 고객 지원</h1>
+<p class="sub">한국어</p>
+
+<div class="meta">
+  <div><strong>개발자</strong> Hyper Duck</div>
+  <div><strong>문의</strong> hyperduck.com@gmail.com</div>
+</div>
+
+<h2>문의하기</h2>
+<div class="contact">
+  <a href="mailto:hyperduck.com@gmail.com">hyperduck.com@gmail.com</a>
+</div>
+<p>
+  질문, 오류 신고, 제안 모두 환영합니다. 보내 주신 메일은 모두 읽고 보통 며칠 안에
+  답장드립니다. 문제를 빨리 확인할 수 있도록 다음 내용을 함께 적어 주세요.
+</p>
+<ul>
+  <li>앱 이름</li>
+  <li>기기 모델과 운영체제 버전 (예: 아이폰 15 · iOS 18, 갤럭시 S24 · 안드로이드 15)</li>
+  <li>어떤 일이 있었는지, 바로 전에 무엇을 하고 있었는지 — 화면 캡처가 있으면 큰 도움이 됩니다</li>
+</ul>
+
+<h2>앱 목록</h2>
+<ul>
+  <li><strong>Shrink 2048</strong> — 안드로이드 · iOS</li>
+  <li><strong>Twofall: Drop Merge Puzzle</strong> — 안드로이드 · iOS (<a href="#twofall-ko">앱 도움말</a>)</li>
+</ul>
+
+<h2>자주 묻는 질문</h2>
+
+<h3>진행 기록은 어디에 저장되나요? 새 폰으로 옮길 수 있나요?</h3>
+<p>
+  저희 게임에는 계정이 없습니다. 진행 기록과 설정은 저희 서버가 아니라 기기 안에만
+  저장됩니다. 앱을 삭제하면 함께 지워지며, 앱 안에서 다른 폰으로 옮기는 기능은
+  없습니다. 새 폰을 기기 백업(iCloud 백업, Google 백업 등)으로 복원하면 기록이 함께
+  돌아올 수 있습니다.
+</p>
+
+<h3>광고를 꼭 봐야 하나요?</h3>
+<p>
+  아닙니다. 보상형 광고는 게임 내 보상을 받으려고 직접 선택했을 때만 재생됩니다.
+  그 밖의 광고는 판과 판 사이에 가끔 나오며, 게임 도중에는 나오지 않고 닫을 수
+  있습니다. 광고를 보지 않아도 게임은 모두 이용할 수 있습니다.
+</p>
+
+<h3>광고 개인정보 설정은 어떻게 바꾸나요?</h3>
+<ul>
+  <li>맞춤 광고 끄기 — 안드로이드: <code>설정 → 개인정보 보호 → 광고</code>,
+      iOS: <code>설정 → 개인정보 보호 및 보안 → 추적</code> 에서 앱의 추적 허용을 끕니다.</li>
+  <li>유럽 경제 지역·영국·스위스 이용자는 앱 안에서 동의를 바꿀 수 있습니다.
+    <ul>
+      <li>Shrink 2048: <code>설정 → 개인정보 → 광고 동의 설정</code></li>
+      <li>Twofall: <code>일시정지 → 광고 개인정보 설정</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h3>게임이 꺼지거나 제대로 동작하지 않아요.</h3>
+<p>
+  스토어에서 최신 버전으로 업데이트하고 기기를 다시 켜 주세요. 그래도 같으면 위의
+  내용을 적어 메일로 알려 주세요.
+</p>
+
+<h3>구매한 상품을 환불하고 싶어요.</h3>
+<p>
+  앱 내 구매가 있는 앱의 결제는 스토어가 처리합니다.
+  <a href="https://support.google.com/googleplay/answer/2479637">Google Play</a> 또는
+  <a href="https://reportaproblem.apple.com">Apple</a> 에서 환불을 요청해 주세요.
+  메일로 문의하셔도 도와드리겠습니다.
+</p>
+
+<h3>어떤 정보를 수집하나요?</h3>
+<p>
+  앱 자체는 개인정보를 수집하지 않습니다. 광고는 Google AdMob 이 제공합니다.
+  자세한 내용은 <a href="privacy-policy.html">개인정보처리방침</a>을 확인해 주세요.
+</p>
+
+<h2>앱별 도움말</h2>
+
+<h3 id="twofall-ko">Twofall: Drop Merge Puzzle</h3>
+<ul>
+  <li><strong>하는 법</strong> — 여섯 칸 중 하나를 눌러 블록을 떨어뜨립니다. 같은 수끼리
+      만나면 두 배가 됩니다. 처음 실행하면 튜토리얼이 나오고, 타이틀 화면의
+      <strong>도움말</strong>에서 다시 볼 수 있습니다.</li>
+  <li><strong>포인트</strong> — 도전 과제를 처음 깰 때, 일일 미션을 채울 때, 1K 같은 특별한
+      수에 처음 닿을 때 받습니다. 상점에서 광고를 보고 50 포인트를 받을 수도 있습니다(하루
+      10번까지). 포인트로 상점의 아이템을 삽니다. 현금으로 파는 것은 없습니다.</li>
+  <li><strong>일일 미션</strong> — 기기 시각으로 자정에 새 미션 셋이 옵니다. 무한 모드를
+      하는 동안 저절로 채워집니다.</li>
+  <li><strong>인터넷 없이</strong> — 게임은 비행기 모드에서도 처음부터 끝까지 됩니다.
+      광고는 인터넷에 연결되어 있을 때만 나옵니다.</li>
+  <li><strong>언어</strong> — 타이틀 화면의 <strong>언어</strong> 버튼으로 한국어와 영어를
+      바꿉니다.</li>
+</ul>
