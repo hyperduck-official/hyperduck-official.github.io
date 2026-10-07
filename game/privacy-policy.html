@@ -1,12 +1,17 @@
 <!--
-  Hyper Duck 공통 개인정보처리방침
+  Hyper Duck 개인정보처리방침 — Google Play(안드로이드) 용
   ===========================================================================
-  Hyper Duck 이 내는 모든 앱이 이 한 페이지를 같이 씁니다. 두 스토어의
-  "개인정보처리방침 URL" 에 앱마다 같은 주소를 넣으면 됩니다.
+  Hyper Duck(조직 계정)이 Google Play 에 내는 모든 앱이 이 한 페이지를 같이 씁니다.
+  Play Console 의 "개인정보처리방침 URL" 에 앱마다 같은 주소를 넣으면 됩니다.
+  게시 주소: https://hyperduck-official.github.io/game/privacy-policy.html
+
+  Apple App Store(iOS)는 개인 계정으로 배포하므로 **따로** 관리합니다:
+  ios/privacy-policy.html (게시 주소 …/game/ios/privacy-policy.html). 이 파일에는
+  iOS 내용을 넣지 않습니다(2026-10-07 플랫폼별로 나눔).
 
   게시하기 전에 반드시 처리할 것
     1) 자리표시자를 채우세요. 두 언어판에 각각 나옵니다.
-         [문의 이메일] / [Contact email]  Play Console · App Store Connect 연락처와 같게
+         [문의 이메일] / [Contact email]  Play Console 연락처와 같게
          [YYYY-MM-DD]                    실제 시행일
     2) 개발자명(Hyper Duck)은 스토어에 표시되는 개발자명과 글자 하나까지 같아야
        합니다. Google Play 가 방침 안에서 이 이름을 찾습니다.
@@ -29,13 +34,11 @@
   스토어 신고와 맞출 것 (앱마다 따로 합니다)
     - Google Play → 앱 콘텐츠 → 데이터 보안: 기기 또는 기타 ID(광고 ID) 수집,
       목적은 광고 · 분석 · 사기 방지, 제3자(Google)와 공유
-    - App Store Connect → 앱 개인정보 보호: 식별자(기기 ID) · 사용 데이터(광고
-      데이터) · 진단, 목적은 제3자 광고
     - Android: 광고를 켤 때 AD_ID 권한(com.google.android.gms.permission.AD_ID)
 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hyper Duck Privacy Policy</title>
+<title>Hyper Duck Privacy Policy (Android)</title>
 
 <style>
   :root {
@@ -104,19 +107,19 @@
 
 <h1>Hyper Duck Privacy Policy</h1>
 <p class="sub">English version</p>
-<p class="sub">Privacy Policy — The English version comes first, followed by the Korean version.</p>
+<p class="sub">Google Play (Android) — The English version comes first, followed by the Korean version.</p>
 
 <div class="meta">
   <div><strong>Developer</strong> Hyper Duck</div>
   <div><strong>Contact</strong> hyperduck.com@gmail.com </div>
-  <div><strong>Effective date</strong> 2026-10-01</div>
+  <div><strong>Effective date</strong> 2026-10-07</div>
 </div>
 
 <h2>1. Scope</h2>
 <p>
   This policy applies to every app that Hyper Duck (“the developer”) publishes on
-  Google Play and the Apple App Store (“the apps”). The apps currently covered are
-  listed below. Because apps may use different outside services, please read the
+  Google Play (“the apps”). Apps distributed on the Apple App Store have their own
+  privacy policy. The apps currently covered are listed below. Because apps may use different outside services, please read the
   parts of this policy that apply to your app with this table in mind.
 </p>
 
@@ -134,6 +137,13 @@
   <tr>
     <td>Twofall: Drop Merge Puzzle</td>
     <td><code>com.hyperduck.twofall</code></td>
+    <td>Google AdMob (rewarded and interstitial)</td>
+    <td>None</td>
+  </tr>
+
+  <tr>
+    <td>SUDORIX: Sudoku Clash</td>
+    <td><code>com.hyperduck.sudorix</code></td>
     <td>Google AdMob (rewarded and interstitial)</td>
     <td>None</td>
   </tr>
@@ -221,8 +231,7 @@
   provider — may collect and process:
 </p>
 <ul>
-  <li>Advertising ID (the Android Advertising ID, or on iOS the Identifier for
-      Advertisers (IDFA) — on iOS only if you allow tracking)</li>
+  <li>Advertising ID (the Android Advertising ID)</li>
   <li>IP address, and the approximate region inferred from it</li>
   <li>Device information such as model, operating system version and language</li>
   <li>Ad impressions, clicks and completions</li>
@@ -243,9 +252,7 @@
   on your interests.
 </p>
 <ul>
-  <li>Android: <code>Settings → Privacy → Ads</code></li>
-  <li>iOS: <code>Settings → Privacy &amp; Security → Tracking</code>, then turn off
-      tracking for the app.</li>
+  <li><code>Settings → Privacy → Ads</code> (the exact path can differ slightly by device maker)</li>
 </ul>
 
 <h3>5.3 Users in the EEA, the UK and Switzerland</h3>
@@ -258,6 +265,7 @@
 <ul>
   <li>Shrink 2048: <code>Settings → Privacy → Ad preferences</code></li>
   <li>Twofall: <code>Pause → Ad Privacy Settings</code> (open the pause menu during a game)</li>
+  <li>SUDORIX: <code>Settings → Ads &amp; Privacy</code> (from the main menu, or from Pause during a game)</li>
 </ul>
 <p>
   The legal basis for processing in these regions is your consent, and withdrawing
@@ -266,8 +274,7 @@
 
 <h3>5.4 In-app purchases</h3>
 <p>
-  In apps that offer in-app purchases, payment is handled by Google Play or the
-  Apple App Store. The developer never receives or stores your card number or other
+  In apps that offer in-app purchases, payment is handled by Google Play. The developer never receives or stores your card number or other
   payment details; it receives only confirmation that a purchase succeeded, and
   then delivers the item.
 </p>
@@ -309,8 +316,8 @@
 <h2>9. Sharing with third parties</h2>
 <p>
   The developer does not sell or rent your information. Apart from the advertising
-  provider described above (Google) and, for in-app purchases, the store that
-  processes the payment (Google or Apple), it is not shared with anyone.
+  provider described above (Google) and, for in-app purchases, Google Play, which
+  processes the payment, it is not shared with anyone.
 </p>
 
 <h2>10. Changes to this policy</h2>
@@ -333,13 +340,14 @@
 <div class="meta">
   <div><strong>개발자</strong> Hyper Duck</div>
   <div><strong>문의</strong> hyperduck.com@gmail.com </div>
-  <div><strong>시행일</strong> 2026-10-01 </div>
+  <div><strong>시행일</strong> 2026-10-07 </div>
 </div>
 
 <h2>1. 적용 범위</h2>
 <p>
-  이 방침은 Hyper Duck(이하 "개발자")이 Google Play 와 Apple App Store 에 배포하는
-  모든 앱(이하 "앱")에 적용됩니다. 현재 적용되는 앱은 아래와 같습니다. 앱마다
+  이 방침은 Hyper Duck(이하 "개발자")이 Google Play 에 배포하는 모든 앱(이하 "앱")에
+  적용됩니다. Apple App Store 로 배포되는 앱은 별도의 개인정보처리방침을 따릅니다.
+  현재 적용되는 앱은 아래와 같습니다. 앱마다
   이용하는 외부 서비스가 다를 수 있으므로, 각 앱에 해당하는 항목은 이 표를
   기준으로 읽어 주시기 바랍니다.
 </p>
@@ -356,6 +364,13 @@
   <tr>
     <td>Twofall: Drop Merge Puzzle</td>
     <td><code>com.hyperduck.twofall</code></td>
+    <td>Google AdMob (보상형 · 전면)</td>
+    <td>없음</td>
+  </tr>
+
+  <tr>
+    <td>SUDORIX: Sudoku Clash</td>
+    <td><code>com.hyperduck.sudorix</code></td>
     <td>Google AdMob (보상형 · 전면)</td>
     <td>없음</td>
   </tr>
@@ -442,8 +457,7 @@
   개별적으로 제공되지 않습니다.
 </p>
 <ul>
-  <li>광고 ID (Android 광고 ID, iOS 광고 식별자(IDFA) — iOS 에서는 이용자가
-      추적을 허용한 경우에만)</li>
+  <li>광고 ID (Android 광고 ID)</li>
   <li>IP 주소 및 이로부터 추정되는 대략적인 지역</li>
   <li>기기 정보 (기기 모델, 운영체제 버전, 언어 설정 등)</li>
   <li>광고 노출·클릭 및 시청 완료 여부</li>
@@ -462,8 +476,7 @@
   맞춤 광고를 꺼도 광고는 계속 표시되지만, 이용자의 관심사에 맞춰 선택되지 않습니다.
 </p>
 <ul>
-  <li>Android: <code>설정 → 개인정보 보호 → 광고</code></li>
-  <li>iOS: <code>설정 → 개인정보 보호 및 보안 → 추적</code> 에서 앱의 추적 허용을 끕니다.</li>
+  <li><code>설정 → 개인정보 보호 → 광고</code> (제조사에 따라 경로가 조금 다를 수 있습니다)</li>
 </ul>
 
 <h3>5-3. 유럽 경제 지역·영국·스위스 이용자</h3>
@@ -475,6 +488,7 @@
 <ul>
   <li>Shrink 2048: <code>설정 → 개인정보 → 광고 동의 설정</code></li>
   <li>Twofall: <code>일시정지 → 광고 개인정보 설정</code> (게임 중 일시정지 창을 엽니다)</li>
+  <li>SUDORIX: <code>설정 → 광고 및 개인정보 설정</code> (메인 메뉴 또는 게임 중 일시정지에서 엽니다)</li>
 </ul>
 <p>
   이 지역 이용자에 대한 개인정보 처리의 법적 근거는 이용자의 동의이며, 동의를
@@ -483,7 +497,7 @@
 
 <h3>5-4. 앱 내 구매</h3>
 <p>
-  앱 내 구매를 제공하는 앱에서 결제는 Google Play 또는 Apple App Store 가 처리합니다.
+  앱 내 구매를 제공하는 앱에서 결제는 Google Play 가 처리합니다.
   개발자는 카드 번호 등 결제 정보를 받거나 보관하지 않으며, 구매가 완료되었다는
   결과만 전달받아 상품을 지급합니다.
 </p>
@@ -521,7 +535,7 @@
 <h2>9. 제3자 제공</h2>
 <p>
   개발자는 이용자의 정보를 제3자에게 판매하거나 대여하지 않습니다. 앞서 설명한
-  광고 제공자(Google)와, 앱 내 구매 시 결제를 처리하는 스토어(Google, Apple) 외에
+  광고 제공자(Google)와, 앱 내 구매 시 결제를 처리하는 Google Play 외에
   정보를 공유하는 대상은 없습니다.
 </p>
 
