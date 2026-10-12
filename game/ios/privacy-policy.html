@@ -26,8 +26,13 @@
 
   스토어 신고와 맞출 것 (앱마다)
     - App Store Connect → 앱 개인정보 보호: 대략적 위치 · 기기 ID · 제품 상호작용 ·
-      광고 데이터(제3자 광고 · 분석, 추적 예) + 충돌 · 성능 · 기타 진단(분석 · 앱 기능)
-    - 앱 쪽: NSUserTrackingUsageDescription(추적 허용 문구), 개인정보 매니페스트
+      광고 데이터(제3자 광고 · 분석) + 충돌 · 성능 · 기타 진단(분석 · 앱 기능)
+    - "추적에 사용" 은 앱마다 다르다:
+        Twofall  — 예. 앱에 NSUserTrackingUsageDescription(추적 허용 문구)과 ATT 창이 있다.
+        SUDORIX  — 아니오. ATT 창도, 추적 허용 문구도 없고 IDFA 에 접근하지 않는다
+                   (export_presets.cfg privacy/tracking_enabled=false).
+                   그래서 5.2(5-2)항에 SUDORIX 예외를 따로 적어 두었다.
+    - 앱 쪽: 개인정보 매니페스트
 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -96,13 +101,13 @@
   .scroll { overflow-x: auto; }
 </style>
 
-<h1> Privacy Policy</h1>
+<h1>Privacy Policy</h1>
 <p class="sub">Apple App Store (iOS) — The English version comes first, followed by the Korean version.</p>
 
 <div class="meta">
-  <div><strong>Developer</strong> KWON O DUCK </div>
+  <div><strong>Developer</strong> KWON O DUCK</div>
   <div><strong>Contact</strong> hyperduck.com@gmail.com</div>
-  <div><strong>Effective date</strong> 2026-10-07</div>
+  <div><strong>Effective date</strong> 2026-10-12</div>
 </div>
 
 <h2>1. Scope</h2>
@@ -120,6 +125,13 @@
   <tr>
     <td>Twofall: Drop Merge Puzzle</td>
     <td><code>com.hyperduck.twofall</code></td>
+    <td>Google AdMob (rewarded and interstitial)</td>
+    <td>None</td>
+  </tr>
+
+  <tr>
+    <td>SUDORIX: Sudoku Duel</td>
+    <td><code>com.hyperduck.sudorixduel</code></td>
     <td>Google AdMob (rewarded and interstitial)</td>
     <td>None</td>
   </tr>
@@ -222,6 +234,11 @@
   <li><code>Settings → Privacy &amp; Security → Tracking</code>, or</li>
   <li><code>Settings → (app name) → Allow Tracking</code></li>
 </ul>
+<p>
+  <strong>SUDORIX</strong> does not show this prompt. It never asks for tracking
+  permission and never accesses the IDFA, so its ads are always shown without it,
+  and it does not appear in the Tracking list in Settings.
+</p>
 
 <h3>5.3 Users in the EEA, the UK and Switzerland</h3>
 <p>
@@ -232,6 +249,7 @@
 </p>
 <ul>
   <li>Twofall: <code>Pause → Ad Privacy Settings</code> (open the pause menu during a game)</li>
+  <li>SUDORIX: <code>Settings → Ads &amp; Privacy</code> (the Settings tile at the bottom of the main screen)</li>
 </ul>
 <p>
   The legal basis for processing in these regions is your consent, and withdrawing
@@ -304,13 +322,13 @@
 
 <hr class="lang-rule">
 
-<h1> 개인정보 처리방침</h1>
+<h1>개인정보 처리방침</h1>
 <p class="sub">Apple App Store (iOS) · 한국어</p>
 
 <div class="meta">
-  <div><strong>개발자</strong> KWON O DUCK </div>
+  <div><strong>개발자</strong> KWON O DUCK</div>
   <div><strong>문의</strong> hyperduck.com@gmail.com</div>
-  <div><strong>시행일</strong> 2026-10-07</div>
+  <div><strong>시행일</strong> 2026-10-12</div>
 </div>
 
 <h2>1. 적용 범위</h2>
@@ -326,6 +344,12 @@
   <tr>
     <td>Twofall: Drop Merge Puzzle</td>
     <td><code>com.hyperduck.twofall</code></td>
+    <td>Google AdMob (보상형 · 전면)</td>
+    <td>없음</td>
+  </tr>
+  <tr>
+    <td>SUDORIX: 스도쿠 대결</td>
+    <td><code>com.hyperduck.sudorixduel</code></td>
     <td>Google AdMob (보상형 · 전면)</td>
     <td>없음</td>
   </tr>
@@ -423,6 +447,11 @@
   <li><code>설정 → 개인정보 보호 및 보안 → 추적</code>, 또는</li>
   <li><code>설정 → (앱 이름) → 추적 허용</code></li>
 </ul>
+<p>
+  <strong>SUDORIX</strong>는 이 창을 띄우지 않습니다. 추적 허용을 요청하지 않고 광고
+  식별자(IDFA)에 접근하지 않으므로, SUDORIX 의 광고는 항상 광고 식별자 없이 표시되며
+  설정의 '추적' 목록에도 나타나지 않습니다.
+</p>
 
 <h3>5-3. 유럽 경제 지역·영국·스위스 이용자</h3>
 <p>
@@ -432,6 +461,7 @@
 </p>
 <ul>
   <li>Twofall: <code>일시정지 → 광고 개인정보 설정</code> (게임 중 일시정지 창을 엽니다)</li>
+  <li>SUDORIX: <code>설정 → 광고 및 개인정보 설정</code> (메인 화면 맨 아래의 설정)</li>
 </ul>
 <p>
   이 지역 이용자에 대한 개인정보 처리의 법적 근거는 이용자의 동의이며, 동의를
