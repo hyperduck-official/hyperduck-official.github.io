@@ -8,13 +8,16 @@
   Google Play(조직 계정 Hyper Duck)용은 한 단계 위 폴더의 privacy-policy.html 로
   따로 관리합니다. 이 파일에는 안드로이드 내용(Android 광고 ID, Play 결제 등)을 넣지 않습니다.
 
+  언어: 영어(#en) · 한국어(#ko) · 일본어(#ja, 2026-11-09 추가). 고칠 때는 세 곳을 같이 고칩니다.
+  App Store Connect 의 언어별 "개인정보 처리방침 URL" 에 #ja 처럼 해당 언어 절을 넣을 수 있습니다.
+
   게시하기 전에 반드시 처리할 것
     1) 자리표시자 [Developer name] / 【개발자 이름】 을 App Store 에 보이는 판매자 이름
        (개인 계정 실명)과 글자 하나까지 같게 채웁니다. 영어 · 한국어 여러 곳에 나옵니다.
     2) 시행일을 실제 날짜로.
 
   앱을 새로 낼 때
-    - 1항의 "적용 앱" 표에 한 줄을 더합니다(영어 · 한국어 두 곳). 앱 이름은 App Store
+    - 1항의 "적용 앱" 표에 한 줄을 더합니다(영어 · 한국어 · 일본어 세 곳). 앱 이름은 App Store
       이름과 같게 씁니다.
     - 5.3(5-3)항의 "광고 개인정보 설정 위치" 목록에 그 앱의 실제 메뉴 경로를 더합니다.
     - 그 앱이 AdMob 말고 다른 서비스(로그인, 분석, 결제, 위치, 카메라 등)를 쓰면 표의
@@ -29,6 +32,11 @@
       광고 데이터(제3자 광고 · 분석) + 충돌 · 성능 · 기타 진단(분석 · 앱 기능)
     - "추적에 사용" 은 앱마다 다르다:
         Twofall  — 예. 앱에 NSUserTrackingUsageDescription(추적 허용 문구)과 ATT 창이 있다.
+        Shrink 2048 — 예. Pixel Truck 처럼 앱이 첫 실행 때 ATT 창을 직접 띄운다
+                   (addons/shrink_ios, 2026-11-09). 동의 창은 그 다음.
+                   앱에 NSUserTrackingUsageDescription 이 있다.
+        Pixel Truck — 예. Twofall 처럼 앱이 첫 실행 때 ATT 창을 직접 띄운다
+                   (addons/pixeltruck_ios, 2026-11-09). 동의 창은 그 다음.
         SUDORIX  — 아니오. ATT 창도, 추적 허용 문구도 없고 IDFA 에 접근하지 않는다
                    (export_presets.cfg privacy/tracking_enabled=false).
                    그래서 5.2(5-2)항에 SUDORIX 예외를 따로 적어 두었다.
@@ -99,15 +107,23 @@
   }
   .lang-rule { margin: 4rem 0 0; border: 0; border-top: 3px double var(--rule); }
   .scroll { overflow-x: auto; }
+  /* 일본어는 띄어쓰기가 없어 keep-all 이면 줄이 안 바뀌고 화면 밖으로 나갑니다. */
+  section[lang="ja"] { word-break: normal; line-break: strict; }
+  section[lang="ja"], section[lang="ja"] * { font-family: -apple-system, BlinkMacSystemFont,
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; }
+  .langs { margin: 0 0 1.5rem; font-size: .95rem; }
+  .langs a { margin-right: .9rem; }
 </style>
 
-<h1>Privacy Policy</h1>
-<p class="sub">Apple App Store (iOS) — The English version comes first, followed by the Korean version.</p>
+<nav class="langs"><a href="#en">English</a><a href="#ko">한국어</a><a href="#ja" lang="ja">日本語</a></nav>
+
+<h1 id="en">Privacy Policy</h1>
+<p class="sub">Apple App Store (iOS) — English first, then Korean and Japanese.</p>
 
 <div class="meta">
   <div><strong>Developer</strong> KWON O DUCK</div>
   <div><strong>Contact</strong> hyperduck.com@gmail.com</div>
-  <div><strong>Effective date</strong> 2026-11-07</div>
+  <div><strong>Effective date</strong> 2026-11-09</div>
 </div>
 
 <h2>1. Scope</h2>
@@ -132,6 +148,20 @@
   <tr>
     <td>SUDORIX: Sudoku Duel</td>
     <td><code>com.hyperduck.sudorixduel</code></td>
+    <td>Google AdMob (rewarded and interstitial)</td>
+    <td>None</td>
+  </tr>
+
+  <tr>
+    <td>Shrink 2048</td>
+    <td><code>com.hyperduck.shrink2048</code></td>
+    <td>Google AdMob (rewarded and interstitial)</td>
+    <td>None</td>
+  </tr>
+
+  <tr>
+    <td>Pixel Truck: Color Puzzle</td>
+    <td><code>com.hyperduck.pixeltruck</code></td>
     <td>Google AdMob (rewarded and interstitial)</td>
     <td>None</td>
   </tr>
@@ -251,6 +281,8 @@
 <ul>
   <li>Twofall: <code>Pause → Ad Privacy Settings</code> (open the pause menu during a game)</li>
   <li>SUDORIX: <code>Settings → Ads &amp; Privacy</code> (the Settings tile at the bottom of the main screen)</li>
+  <li>Shrink 2048: <code>Settings → Privacy → Ad preferences</code> (the gear at the top right of the main screen)</li>
+  <li>Pixel Truck: <code>Settings → PRIVACY CHOICES</code> (the gear at the bottom right of the main screen)</li>
 </ul>
 <p>
   The legal basis for processing in these regions is your consent, and withdrawing
@@ -323,13 +355,13 @@
 
 <hr class="lang-rule">
 
-<h1>개인정보 처리방침</h1>
+<h1 id="ko">개인정보 처리방침</h1>
 <p class="sub">Apple App Store (iOS) · 한국어</p>
 
 <div class="meta">
   <div><strong>개발자</strong> KWON O DUCK</div>
   <div><strong>문의</strong> hyperduck.com@gmail.com</div>
-  <div><strong>시행일</strong> 2026-11-07</div>
+  <div><strong>시행일</strong> 2026-11-09</div>
 </div>
 
 <h2>1. 적용 범위</h2>
@@ -351,6 +383,19 @@
   <tr>
     <td>SUDORIX: 스도쿠 대결</td>
     <td><code>com.hyperduck.sudorixduel</code></td>
+    <td>Google AdMob (보상형 · 전면)</td>
+    <td>없음</td>
+  </tr>
+  <tr>
+    <td>Shrink 2048</td>
+    <td><code>com.hyperduck.shrink2048</code></td>
+    <td>Google AdMob (보상형 · 전면)</td>
+    <td>없음</td>
+  </tr>
+
+  <tr>
+    <td>Pixel Truck: Color Puzzle</td>
+    <td><code>com.hyperduck.pixeltruck</code></td>
     <td>Google AdMob (보상형 · 전면)</td>
     <td>없음</td>
   </tr>
@@ -464,6 +509,8 @@
 <ul>
   <li>Twofall: <code>일시정지 → 광고 개인정보 설정</code> (게임 중 일시정지 창을 엽니다)</li>
   <li>SUDORIX: <code>설정 → 광고 및 개인정보 설정</code> (메인 화면 맨 아래의 설정)</li>
+  <li>Shrink 2048: <code>설정 → 개인정보 → 광고 동의 설정</code> (메인 화면 오른쪽 위의 톱니바퀴)</li>
+  <li>Pixel Truck: <code>Settings → PRIVACY CHOICES</code> (메인 화면 오른쪽 아래의 톱니바퀴)</li>
 </ul>
 <p>
   이 지역 이용자에 대한 개인정보 처리의 법적 근거는 이용자의 동의이며, 동의를
@@ -527,3 +574,231 @@
   개인정보 처리에 관한 문의는 <strong>hyperduck.com@gmail.com</strong> 로 보내 주시기 바랍니다.
   문의하실 때 해당 앱의 이름을 함께 적어 주시면 빠르게 답변드릴 수 있습니다.
 </p>
+
+<hr class="lang-rule">
+
+<section lang="ja" id="ja">
+<h1>プライバシーポリシー</h1>
+<p class="sub">Apple App Store (iOS) · 日本語</p>
+
+<div class="meta">
+  <div><strong>開発者</strong> KWON O DUCK</div>
+  <div><strong>お問い合わせ</strong> hyperduck.com@gmail.com</div>
+  <div><strong>施行日</strong> 2026-11-09</div>
+</div>
+
+<h2>1. 適用範囲</h2>
+<p>
+  本ポリシーは、KWON O DUCK（以下「開発者」）が Apple App Store で配信するすべてのアプリ
+  （以下「アプリ」）に適用されます。現在対象となるアプリは下表のとおりです。アプリごとに
+  利用する外部サービスが異なる場合があるため、お使いのアプリに当てはまる項目は
+  この表を基準にお読みください。
+</p>
+
+<div class="scroll">
+<table>
+  <tr><th>アプリ</th><th>バンドル ID</th><th>広告</th><th>その他のサービス</th></tr>
+  <tr>
+    <td>Twofall: Drop Merge Puzzle</td>
+    <td><code>com.hyperduck.twofall</code></td>
+    <td>Google AdMob（リワード・インタースティシャル）</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>SUDORIX: Sudoku Duel</td>
+    <td><code>com.hyperduck.sudorixduel</code></td>
+    <td>Google AdMob（リワード・インタースティシャル）</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>Shrink 2048</td>
+    <td><code>com.hyperduck.shrink2048</code></td>
+    <td>Google AdMob（リワード・インタースティシャル）</td>
+    <td>なし</td>
+  </tr>
+  <tr>
+    <td>Pixel Truck: Color Puzzle</td>
+    <td><code>com.hyperduck.pixeltruck</code></td>
+    <td>Google AdMob（リワード・インタースティシャル）</td>
+    <td>なし</td>
+  </tr>
+</table>
+</div>
+
+<h2>2. 概要</h2>
+<p>
+  開発者のアプリにはアカウントがありません。会員登録を求めず、氏名・メールアドレス・
+  電話番号・住所をお聞きすることもなく、アプリから開発者のサーバーへ情報を送ることも
+  ありません。ゲームの記録と設定は端末の中にだけ保存されます。
+</p>
+<p>
+  個人情報に関わるのは<strong>広告</strong>だけです。アプリは Google AdMob を通じて広告を
+  表示し、その際 Google が広告の配信と効果測定のために一定の情報を収集します。
+  詳しくは第5項で説明します。
+</p>
+
+<h2>3. 端末に保存される情報</h2>
+<p>
+  次の情報は端末内のアプリの保存領域にだけ記録され、<strong>開発者に送信されることは
+  ありません。</strong>アプリを削除すると一緒に消えます。具体的な項目はアプリによって
+  異なる場合があります。
+</p>
+
+<div class="scroll">
+<table>
+  <tr><th>保存される項目</th><th>内容</th></tr>
+  <tr>
+    <td>ゲームの進行状況</td>
+    <td>ハイスコアと累計スコア、所持ポイントとアイテム、ステージ・チャレンジの記録、
+        デイリーミッション、ランクと実績、プレイ途中の局</td>
+  </tr>
+  <tr>
+    <td>アプリの設定</td>
+    <td>効果音・振動のオン／オフ、選んだ言語、表示方法</td>
+  </tr>
+</table>
+</div>
+<p>
+  iCloud バックアップをお使いの場合、これらの情報が端末のバックアップに含まれることが
+  あります。バックアップは Apple のプライバシーポリシーに従って取り扱われます。
+</p>
+
+<h2>4. アプリが収集しない情報</h2>
+<ul>
+  <li>氏名、メールアドレス、電話番号、住所などの連絡先情報</li>
+  <li>正確な位置情報（GPS を含む）</li>
+  <li>連絡先、写真、ファイル、通話履歴、メッセージ</li>
+  <li>カメラおよびマイクの入力</li>
+  <li>ほかのアプリのインストール一覧や利用状況</li>
+</ul>
+<p>
+  アプリは上記の項目にアクセスする許可を求めません。求めることがある許可は、第5.2項の
+  「App Tracking Transparency（トラッキングの許可）」だけです。
+</p>
+
+<h2>5. 広告</h2>
+<p>
+  アプリは Google AdMob を通じて次の2種類の広告を表示します。広告を見なくても
+  ゲームは問題なく遊べます。
+</p>
+<ul>
+  <li><strong>リワード広告</strong> — ご自身でボタンを押して視聴を選んだときにだけ再生され、
+      見終わるとゲーム内の報酬（復活、追加ポイントなど）を受け取れます。</li>
+  <li><strong>インタースティシャル広告</strong> — 局と局のあいだにときどき表示されます。
+      プレイ中には表示されず、閉じるボタンで閉じられます。</li>
+</ul>
+
+<h3>5.1 Google が収集する情報</h3>
+<p>
+  広告の配信・効果測定と不正の防止のため、広告事業者である Google が次の情報を
+  収集・処理することがあります。これらは Google が収集するもので、開発者に個別に
+  提供されることはありません。
+</p>
+<ul>
+  <li>広告識別子（IDFA）— <strong>トラッキングを許可した場合のみ</strong></li>
+  <li>IP アドレスと、そこから推定されるおおよその位置</li>
+  <li>端末の情報（機種、iOS のバージョン、言語設定など）</li>
+  <li>広告の表示・クリック・視聴完了の有無</li>
+  <li>広告ソフトウェアの診断情報（クラッシュ・パフォーマンスの情報など）</li>
+</ul>
+<p>Google によるデータの取り扱いについては、次のページをご覧ください。</p>
+<ul>
+  <li><a href="https://policies.google.com/privacy?hl=ja">Google プライバシーポリシー</a></li>
+  <li><a href="https://policies.google.com/technologies/partner-sites?hl=ja">Google のサービスを使用するサイトやアプリから収集した情報の Google による使用</a></li>
+</ul>
+
+<h3>5.2 トラッキングの許可（App Tracking Transparency）</h3>
+<p>
+  アプリを初めて開くと、広告サービスが始まる前に Apple の「トラッキングの許可」画面を
+  表示します。お答えいただくまで、トラッキングに使われうる情報は収集しません。
+  <em>Appにトラッキングしないように要求</em>を選ぶと広告識別子は共有されず、広告は
+  それなしで表示されます。選択はいつでも変更できます。
+</p>
+<ul>
+  <li><code>設定 → プライバシーとセキュリティ → トラッキング</code>、または</li>
+  <li><code>設定 → （アプリ名）→ トラッキングを許可</code></li>
+</ul>
+<p>
+  <strong>SUDORIX</strong> はこの画面を表示しません。トラッキングの許可を求めず、広告識別子
+  （IDFA）にもアクセスしないため、SUDORIX の広告は常に広告識別子なしで表示され、
+  設定の「トラッキング」一覧にも表示されません。
+</p>
+
+<h3>5.3 欧州経済領域（EEA）・英国・スイスにお住まいの方</h3>
+<p>
+  これらの地域では、広告が表示される前に同意を求める画面が表示されます。パーソナライズ
+  広告に同意することも拒否することもでき、選択はいつでもアプリの広告プライバシー設定
+  から変更できます。各アプリでの場所は次のとおりです。
+</p>
+<ul>
+  <li>Twofall: <code>Pause → Ad Privacy Settings</code>（プレイ中に一時停止メニューを開きます）</li>
+  <li>SUDORIX: <code>設定 → 広告とプライバシー設定</code>（メイン画面いちばん下の設定）</li>
+  <li>Shrink 2048: <code>設定 → プライバシー → 広告の同意設定</code>（メイン画面右上の歯車）</li>
+  <li>Pixel Truck: <code>Settings → PRIVACY CHOICES</code>（メイン画面右下の歯車）</li>
+</ul>
+<p>
+  これらの地域における個人情報の取り扱いの法的根拠はご本人の同意であり、同意を
+  撤回してもゲームの利用は制限されません。
+</p>
+
+<h3>5.4 アプリ内課金</h3>
+<p>
+  アプリ内課金があるアプリでは、決済は Apple App Store が行います。開発者がカード番号
+  などの決済情報を受け取ったり保管したりすることはなく、購入が完了したという結果だけを
+  受け取って商品をお渡しします。現在、第1項の表のアプリにアプリ内課金はありません。
+</p>
+
+<h2>6. 子どもの個人情報</h2>
+<p>
+  開発者のアプリは 13歳未満（大韓民国では 14歳未満）のお子さまを対象としておらず、
+  お子さまから個人情報を意図的に収集することはありません。収集されたことが分かった
+  場合は速やかに削除します。お子さまの情報が収集されたと思われる場合は、下記の
+  お問い合わせ先までお知らせください。
+</p>
+
+<h2>7. 情報の保存と削除</h2>
+<p>
+  端末に保存されたゲームの記録と設定は、アプリを削除するまで保存され、
+  <strong>アプリを削除するとすべて一緒に削除されます。</strong>開発者が別に写しを保管する
+  ことはありません。
+</p>
+<p>
+  Google が広告の目的で収集した情報の保存期間と削除方法は、Google のプライバシー
+  ポリシーに従います。
+</p>
+
+<h2>8. 利用者の権利</h2>
+<p>
+  開発者の側では個人情報を収集・保管していないため、開発者に開示や削除を
+  ご請求いただく内容はありません。端末に保存された情報は、アプリを削除すれば
+  すぐに消去できます。
+</p>
+<p>
+  お住まいの地域の法令（日本の個人情報保護法、欧州の GDPR、米国カリフォルニア州の
+  CCPA など）により、広告に関する情報について開示・削除・利用停止などを求める権利を
+  お持ちの場合があります。これらの情報は Google が取り扱うため、Google の
+  プライバシーポリシーに記載された手続きをご利用ください。開発者が利用者の個人情報を
+  販売することはありません。
+</p>
+
+<h2>9. 第三者への提供</h2>
+<p>
+  開発者は利用者の情報を第三者に販売・貸与しません。前述の広告事業者（Google）と、
+  アプリ内課金の際に決済を行う Apple App Store のほかに、情報を共有する相手は
+  ありません。
+</p>
+
+<h2>10. ポリシーの変更</h2>
+<p>
+  本ポリシーを変更する場合は、改定した内容と施行日をこのページに掲載します。
+  新しいアプリが加わったり、アプリが利用するサービスが変わったりした場合は、
+  第1項の表と該当する内容をあわせて改めます。重要な変更がある場合は、アプリの
+  アップデートの際にもお知らせします。
+</p>
+
+<h2>11. お問い合わせ</h2>
+<p>
+  個人情報の取り扱いに関するお問い合わせは <strong>hyperduck.com@gmail.com</strong> まで
+  お送りください。アプリ名を添えていただくと、より早くお返事できます。
+</p>
+</section>

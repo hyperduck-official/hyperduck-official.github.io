@@ -4,7 +4,8 @@
   개인 개발자 계정으로 App Store 에 내는 앱이 이 한 페이지를 같이 씁니다.
   같은 폴더의 privacy-policy.html 을 상대 경로로 링크합니다.
   게시 주소: https://hyperduck-official.github.io/game/ios/support.html
-  (앱 절로 바로: #twofall · #sudorix, 한국어 #twofall-ko · #sudorix-ko)
+  (앱 절로 바로: #twofall · #sudorix · #shrink2048 · #pixeltruck, 한국어 #twofall-ko · #sudorix-ko · #shrink2048-ko · #pixeltruck-ko,
+   일본어 #shrink2048-ja — 일본어 절(#ja, 2026-11-09)은 Shrink 2048 도움말만 두고 다른 앱은 영어 도움말로 잇습니다)
 
   Google Play(조직 계정 Hyper Duck)용은 한 단계 위 폴더의 support.html 로 따로 둡니다.
   App Store 심사는 이 페이지가 열리는지, 연락 방법이 보이는지를 봅니다.
@@ -88,10 +89,18 @@
     font-size: .88em;
   }
   .lang-rule { margin: 4rem 0 0; border: 0; border-top: 3px double var(--rule); }
+  /* 일본어는 띄어쓰기가 없어 keep-all 이면 줄이 안 바뀌고 화면 밖으로 나갑니다. */
+  section[lang="ja"] { word-break: normal; line-break: strict; }
+  section[lang="ja"], section[lang="ja"] * { font-family: -apple-system, BlinkMacSystemFont,
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif; }
+  .langs { margin: 0 0 1.5rem; font-size: .95rem; }
+  .langs a { margin-right: .9rem; }
 </style>
 
-<h1>Support</h1>
-<p class="sub">Apple App Store (iOS) — The English version comes first, followed by the Korean version.</p>
+<nav class="langs"><a href="#en">English</a><a href="#ko">한국어</a><a href="#ja" lang="ja">日本語</a></nav>
+
+<h1 id="en">Support</h1>
+<p class="sub">Apple App Store (iOS) — English first, then Korean and Japanese.</p>
 
 <div class="meta">
   <div><strong>Developer</strong> KWON O DUCK</div>
@@ -117,6 +126,8 @@
 <ul>
   <li><strong>Twofall: Drop Merge Puzzle</strong> (<a href="#twofall">app help</a>)</li>
   <li><strong>SUDORIX: Sudoku Duel</strong> (<a href="#sudorix">app help</a>)</li>
+  <li><strong>Shrink 2048</strong> (<a href="#shrink2048">app help</a>)</li>
+  <li><strong>Pixel Truck: Color Puzzle</strong> (<a href="#pixeltruck">app help</a>)</li>
 </ul>
 
 <h2>Frequently asked questions</h2>
@@ -145,6 +156,8 @@
     <ul>
       <li>Twofall: <code>Pause → Ad Privacy Settings</code></li>
       <li>SUDORIX: <code>Settings → Ads &amp; Privacy</code></li>
+      <li>Shrink 2048: <code>Settings → Privacy → Ad preferences</code></li>
+      <li>Pixel Truck: <code>Settings → PRIVACY CHOICES</code></li>
     </ul>
   </li>
 </ul>
@@ -211,9 +224,46 @@
       Chinese or Japanese.</li>
 </ul>
 
+<h3 id="shrink2048">Shrink 2048</h3>
+<ul>
+  <li><strong>How to play</strong> — Swipe to slide every tile; two equal numbers merge into
+      one. In <strong>Shrink</strong> mode a mission arrives every 20 moves: clear it and the
+      board grows a ring (up to 7×7), miss it and it shrinks. Miss five missions and the run
+      ends. Hints appear the first time each new tile or item shows up.</li>
+  <li><strong>Bombs</strong> — The number in the corner, and the fuse burning around the
+      edge, show the moves left. Merge the bomb with a matching number before it reaches zero.</li>
+  <li><strong>Revive</strong> — When a run ends you can watch an ad once per run to keep
+      playing, or spend points.</li>
+  <li><strong>Points and items</strong> — Earned by playing, clearing achievements and
+      ranking up. Points buy items (Undo, Swap, Break, Promote); some items can also be
+      received by watching an ad. Nothing is sold for real money.</li>
+  <li><strong>Offline play</strong> — Every mode works without an internet connection,
+      airplane mode included. Ads appear only when you are online.</li>
+  <li><strong>Language</strong> — <code>Settings → Language</code>: English, Korean,
+      Chinese or Japanese.</li>
+</ul>
+
+<h3 id="pixeltruck">Pixel Truck: Color Puzzle</h3>
+<ul>
+  <li><strong>How to play</strong> — Tap a truck in the parking lot to send it to the lane.
+      Each truck takes the open pixels of its own color (the lowest pixel of each column)
+      until it is full. Take every pixel to finish the picture. The lane has four spots:
+      a truck with nothing to take keeps its spot busy.</li>
+  <li><strong>Lives</strong> — Losing a level, or leaving it before the end, costs one of
+      five lives. One comes back every 20 minutes, or all of them for coins.</li>
+  <li><strong>Coins and items</strong> — Earned by playing. Coins buy items (Hint, +1 Slot,
+      Rainbow Truck) and truck looks in the garage; some can also be received by watching an
+      ad. Nothing is sold for real money.</li>
+  <li><strong>Settings</strong> — The gear at the bottom right of the main screen: Day &amp;
+      Night, the privacy policy, ad privacy choices (where they apply) and licenses.</li>
+  <li><strong>Offline play</strong> — Every level works without an internet connection,
+      airplane mode included. Ads appear only when you are online.</li>
+  <li><strong>Language</strong> — The game is in English.</li>
+</ul>
+
 <hr class="lang-rule">
 
-<h1>고객 지원</h1>
+<h1 id="ko">고객 지원</h1>
 <p class="sub">Apple App Store (iOS) · 한국어</p>
 
 <div class="meta">
@@ -239,6 +289,8 @@
 <ul>
   <li><strong>Twofall: Drop Merge Puzzle</strong> (<a href="#twofall-ko">앱 도움말</a>)</li>
   <li><strong>SUDORIX: 스도쿠 대결</strong> (<a href="#sudorix-ko">앱 도움말</a>)</li>
+  <li><strong>Shrink 2048</strong> (<a href="#shrink2048-ko">앱 도움말</a>)</li>
+  <li><strong>Pixel Truck: Color Puzzle</strong> (<a href="#pixeltruck-ko">앱 도움말</a>)</li>
 </ul>
 
 <h2>자주 묻는 질문</h2>
@@ -266,6 +318,8 @@
     <ul>
       <li>Twofall: <code>일시정지 → 광고 개인정보 설정</code></li>
       <li>SUDORIX: <code>설정 → 광고 및 개인정보 설정</code></li>
+      <li>Shrink 2048: <code>설정 → 개인정보 → 광고 동의 설정</code></li>
+      <li>Pixel Truck: <code>Settings → PRIVACY CHOICES</code></li>
     </ul>
   </li>
 </ul>
@@ -330,3 +384,145 @@
   <li><strong>언어</strong> — <code>설정 → 언어</code>에서 한국어 · 영어 · 중국어 ·
       일본어를 고릅니다.</li>
 </ul>
+
+<h3 id="shrink2048-ko">Shrink 2048</h3>
+<ul>
+  <li><strong>하는 법</strong> — 화면을 밀어 타일을 움직이고, 같은 숫자끼리 만나면 하나로
+      합쳐집니다. <strong>축소</strong> 모드에서는 20수마다 미션이 나옵니다. 해내면 판이 한
+      겹 넓어지고(최대 7×7), 놓치면 한 겹 좁아집니다. 미션을 다섯 번 놓치면 그 판은
+      끝납니다. 새 타일이나 아이템이 처음 나올 때 안내가 뜹니다.</li>
+  <li><strong>폭탄</strong> — 오른쪽 위의 숫자와 테두리를 따라 타들어 가는 도화선이 남은
+      수를 보여 줍니다. 0이 되기 전에 같은 숫자와 합쳐 해체하세요.</li>
+  <li><strong>부활</strong> — 판이 끝나면 한 판에 한 번 광고를 보고 이어서 하거나, 포인트를
+      내고 이어서 할 수 있습니다.</li>
+  <li><strong>포인트와 아이템</strong> — 게임을 하고 업적을 달성하고 등급이 오를 때 받습니다.
+      포인트로 아이템(되돌리기 · 자리 바꾸기 · 부수기 · 승급)을 사고, 일부 아이템은 광고를
+      보고 받을 수도 있습니다. 현금으로 파는 것은 없습니다.</li>
+  <li><strong>인터넷 없이</strong> — 모든 모드가 비행기 모드에서도 됩니다. 광고는 인터넷에
+      연결되어 있을 때만 나옵니다.</li>
+  <li><strong>언어</strong> — <code>설정 → 언어</code>에서 한국어 · 영어 · 중국어 ·
+      일본어를 고릅니다.</li>
+</ul>
+
+<h3 id="pixeltruck-ko">Pixel Truck: Color Puzzle</h3>
+<ul>
+  <li><strong>하는 법</strong> — 주차장의 트럭을 누르면 레인으로 갑니다. 트럭은 자기 색의
+      열린 픽셀(각 세로줄의 맨 아래 픽셀)을 가득 찰 때까지 가져갑니다. 픽셀을 모두 가져가면
+      그림이 완성됩니다. 레인은 네 칸뿐이라, 가져갈 것이 없는 트럭은 자리만 차지합니다.</li>
+  <li><strong>하트</strong> — 판에서 지거나 끝나기 전에 나가면 하트 5개 중 하나가 줄어듭니다.
+      20분마다 하나씩 돌아오고, 코인으로 한 번에 채울 수도 있습니다.</li>
+  <li><strong>코인과 아이템</strong> — 게임을 하며 받습니다. 코인으로 아이템(힌트 · +1 칸 ·
+      무지개 트럭)과 차고의 트럭 꾸미기를 사고, 일부는 광고를 보고 받을 수도 있습니다.
+      현금으로 파는 것은 없습니다.</li>
+  <li><strong>설정</strong> — 메인 화면 오른쪽 아래의 톱니바퀴: 낮과 밤, 개인정보처리방침,
+      광고 개인정보 설정(해당 지역만), 라이선스.</li>
+  <li><strong>인터넷 없이</strong> — 모든 판이 비행기 모드에서도 됩니다. 광고는 인터넷에
+      연결되어 있을 때만 나옵니다.</li>
+  <li><strong>언어</strong> — 게임은 영어로 되어 있습니다.</li>
+</ul>
+
+<hr class="lang-rule">
+
+<section lang="ja" id="ja">
+<h1>サポート</h1>
+<p class="sub">Apple App Store (iOS) · 日本語</p>
+
+<div class="meta">
+  <div><strong>開発者</strong> KWON O DUCK</div>
+  <div><strong>お問い合わせ</strong> hyperduck.com@gmail.com</div>
+</div>
+
+<h2>お問い合わせ</h2>
+<div class="contact">
+  <a href="mailto:hyperduck.com@gmail.com">hyperduck.com@gmail.com</a>
+</div>
+<p>
+  ご質問、不具合のご報告、ご提案、どれも歓迎します。いただいたメールはすべて読み、
+  ふつうは数日以内にお返事します。日本語でも英語でもかまいません。問題をすばやく
+  調べられるよう、次のことを書き添えてください。
+</p>
+<ul>
+  <li>アプリ名</li>
+  <li>iPhone の機種と iOS のバージョン（例: iPhone 15・iOS 18）</li>
+  <li>何が起きたか、その直前に何をしていたか（スクリーンショットがあると助かります）</li>
+</ul>
+
+<h2>アプリ一覧</h2>
+<ul>
+  <li><strong>Twofall: Drop Merge Puzzle</strong>（<a href="#twofall">ヘルプ・英語</a>）</li>
+  <li><strong>SUDORIX: Sudoku Duel</strong>（<a href="#sudorix">ヘルプ・英語</a>）</li>
+  <li><strong>Shrink 2048</strong>（<a href="#shrink2048-ja">ヘルプ</a>）</li>
+  <li><strong>Pixel Truck: Color Puzzle</strong>（<a href="#pixeltruck">ヘルプ・英語</a>）</li>
+</ul>
+
+<h2>よくある質問</h2>
+
+<h3>進行状況はどこに保存されますか？新しい iPhone に移せますか？</h3>
+<p>
+  ゲームにアカウントはありません。進行状況と設定は iPhone の中にだけ保存され、
+  サーバーには保存されません。アプリを削除すると消え、アプリ内で引き継ぐ機能も
+  ありません。iCloud やパソコンのバックアップから新しい iPhone を復元すると、
+  進行状況も一緒に移ることがあります。
+</p>
+
+<h3>広告は見なければいけませんか？</h3>
+<p>
+  いいえ。リワード広告は、ゲーム内の報酬のためにご自身で選んだときにだけ再生されます。
+  それ以外の広告は局と局のあいだにときどき表示されるだけで、プレイ中には出ず、
+  閉じることもできます。広告を一度も見なくてもゲームは最後まで遊べます。
+</p>
+
+<h3>広告のプライバシー設定はどこで変えられますか？</h3>
+<ul>
+  <li>トラッキング — <code>設定 → プライバシーとセキュリティ → トラッキング</code>、または
+      <code>設定 → （アプリ名）→ トラッキングを許可</code>。
+      SUDORIX はトラッキングを求めないため、そこには表示されません。</li>
+  <li>欧州経済領域（EEA）・英国・スイスにお住まいの方は、アプリの中で広告の同意を変更できます。
+    <ul>
+      <li>Twofall: <code>Pause → Ad Privacy Settings</code></li>
+      <li>SUDORIX: <code>設定 → 広告とプライバシー設定</code></li>
+      <li>Shrink 2048: <code>設定 → プライバシー → 広告の同意設定</code></li>
+      <li>Pixel Truck: <code>Settings → PRIVACY CHOICES</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h3>ゲームが落ちる、正しく動かない</h3>
+<p>
+  App Store から最新版にアップデートし、iPhone を再起動してください。それでも直らない
+  場合は、上記の内容を添えてメールでお知らせください。
+</p>
+
+<h3>購入の返金はどうすればいいですか？</h3>
+<p>
+  アプリ内課金があるアプリでは、決済は Apple が行います。
+  <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> から返金を
+  ご依頼ください。メールでもお手伝いします。
+</p>
+
+<h3>どんなデータを収集していますか？</h3>
+<p>
+  アプリ自体は個人情報を収集しません。広告は Google AdMob が配信します。詳しくは
+  <a href="privacy-policy.html#ja">プライバシーポリシー</a>をご覧ください。
+</p>
+
+<h2>アプリ別ヘルプ</h2>
+
+<h3 id="shrink2048-ja">Shrink 2048</h3>
+<ul>
+  <li><strong>遊び方</strong> — 画面をスワイプしてタイルを動かし、同じ数字どうしがぶつかると
+      ひとつに合体します。<strong>縮小</strong>モードでは20手ごとにミッションが出ます。
+      達成すれば盤がひと回り広がり（最大 7×7）、失敗すればひと回り縮みます。ミッションに
+      5回失敗するとその局は終わりです。新しいタイルやアイテムが初めて出たときに説明が出ます。</li>
+  <li><strong>爆弾</strong> — 右上の数字と、ふちに沿って燃えていく導火線が残り手数を示します。
+      0 になる前に同じ数字と合体させて解除しましょう。</li>
+  <li><strong>復活</strong> — 局が終わったとき、1局に1回だけ広告を見て続けるか、ポイントを
+      払って続けられます。</li>
+  <li><strong>ポイントとアイテム</strong> — プレイする、実績を達成する、ランクが上がると
+      もらえます。ポイントでアイテム（元に戻す・位置交換・破壊・昇級）を買えます。一部の
+      アイテムは広告を見てもらうこともできます。お金で売っているものはありません。</li>
+  <li><strong>オフライン</strong> — すべてのモードが機内モードでも遊べます。広告はインターネットに
+      つながっているときだけ表示されます。</li>
+  <li><strong>言語</strong> — <code>設定 → 言語</code> で日本語・英語・韓国語・中国語を選べます。</li>
+</ul>
+</section>
